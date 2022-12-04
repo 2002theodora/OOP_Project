@@ -111,7 +111,28 @@ public:
 		delete[] this->default_char_value;
 		delete[] this->default_float_value;
 	}
+
+
+	//function to display a table--------------------------------------------------------------------------
+	void display(string name, type columnType, float noRows, string defaultValue = "empty") {
+
+		if (columnType == numbers || columnType == text) {
+			for (int i = 0; i < noRows; i++) {
+				
+				cout << name[i];
+
+			}
+		}
+		else
+			throw "Invalid type!";
+	}
+
+
+	
 };
+
+
+
 
 
 
@@ -122,4 +143,5 @@ int main() {
 	column bla("stoc", numbers, 12, y);
 	//column_1_name,type,size, default_value
 	//create table pateu ((nume,name, 12,bucovina),(stoc,number,10,0))
+	tra.display("Nume", numbers, 3, "empty");
 }
